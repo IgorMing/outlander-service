@@ -3,17 +3,24 @@ import client from './client';
 
 class Person extends Entity {}
 
-const personSchema = new Schema(Person, {
-  firstName: { type: 'string' },
-  lastName: { type: 'string' },
-  age: { type: 'number' },
-  verified: { type: 'boolean' },
-  location: { type: 'point' },
-  locationUpdated: { type: 'date' },
-  skills: { type: 'string[]' },
-  personalStatement: { type: 'text' },
-});
+const personSchema = new Schema(
+  Person,
+  {
+    firstName: { type: 'string' },
+    lastName: { type: 'string' },
+    age: { type: 'number' },
+    verified: { type: 'boolean' },
+    location: { type: 'point' },
+    locationUpdated: { type: 'date' },
+    skills: { type: 'string[]' },
+    personalStatement: { type: 'text' },
+  },
+  {
+    dataStructure: 'JSON',
+  }
+);
 
-export const personRepository = client.fetchRepository(personSchema);
-
+const personRepository = client.fetchRepository(personSchema);
 await personRepository.createIndex();
+
+export { personRepository };

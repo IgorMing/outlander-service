@@ -8,7 +8,7 @@ info:
 
 paths:
   /person:
-    put:
+    post:
       tags:
         - Person
       description: Creates a new person with the specified attributes
@@ -22,7 +22,7 @@ paths:
             schema:
               title: person
               allOf:
-                - $ref: "#/components/schemas/person"
+                - $ref: '#/components/schemas/person'
       responses:
         '200':
           description: OK
@@ -30,8 +30,8 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/person_id"
-                  - $ref: "#/components/schemas/person"
+                  - $ref: '#/components/schemas/person_id'
+                  - $ref: '#/components/schemas/person'
 
   /person/{id}:
     get:
@@ -41,7 +41,7 @@ paths:
       summary: Get person
       operationId: fetchPerson
       parameters:
-        - $ref: "#/components/parameters/id"
+        - $ref: '#/components/parameters/id'
       responses:
         '200':
           description: OK
@@ -49,16 +49,16 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/person_id"
-                  - $ref: "#/components/schemas/person"
-    post:
+                  - $ref: '#/components/schemas/person_id'
+                  - $ref: '#/components/schemas/person'
+    put:
       tags:
         - Person
       description: Updates a specific person
       summary: Update person
       operationId: updatePerson
       parameters:
-        - $ref: "#/components/parameters/id"
+        - $ref: '#/components/parameters/id'
       requestBody:
         description: person
         required: true
@@ -67,7 +67,7 @@ paths:
             schema:
               title: person
               allOf:
-                - $ref: "#/components/schemas/person"
+                - $ref: '#/components/schemas/person'
       responses:
         '200':
           description: OK
@@ -75,16 +75,16 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/person_id"
-                  - $ref: "#/components/schemas/person"
+                  - $ref: '#/components/schemas/person_id'
+                  - $ref: '#/components/schemas/person'
     delete:
-      tags: 
-         - Person
+      tags:
+        - Person
       description: Deletes the person by ID
       summary: Delete person
       operationId: removePerson
       parameters:
-        - $ref: "#/components/parameters/id"
+        - $ref: '#/components/parameters/id'
       responses:
         '200':
           description: OK
@@ -92,7 +92,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/person_id"
+                  - $ref: '#/components/schemas/person_id'
 
   /persons/all:
     get:
@@ -108,7 +108,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/persons"
+                  - $ref: '#/components/schemas/persons'
 
   /persons/by-last-name/{last_name}:
     get:
@@ -118,7 +118,7 @@ paths:
       summary: Get persons by last name
       operationId: fetchPersonsByLastName
       parameters:
-        - $ref: "#/components/parameters/last_name"
+        - $ref: '#/components/parameters/last_name'
       responses:
         '200':
           description: OK
@@ -126,7 +126,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/persons"
+                  - $ref: '#/components/schemas/persons'
 
   /persons/old-enough-to-drink-in-america:
     get:
@@ -142,7 +142,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/persons"
+                  - $ref: '#/components/schemas/persons'
 
   /persons/non-verified:
     get:
@@ -158,7 +158,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/persons"
+                  - $ref: '#/components/schemas/persons'
 
   /persons/verified-drinkers-with-last-name/{last_name}:
     get:
@@ -168,7 +168,7 @@ paths:
       summary: Get oddly specific set of persons
       operationId: fetchVerifiedDrinkersByLastName
       parameters:
-        - $ref: "#/components/parameters/last_name"
+        - $ref: '#/components/parameters/last_name'
       responses:
         '200':
           description: OK
@@ -176,7 +176,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/persons"
+                  - $ref: '#/components/schemas/persons'
 
   /persons/with-statement-containing/{text}:
     get:
@@ -186,7 +186,7 @@ paths:
       summary: Get persons with words matching personal statement
       operationId: fetchPersonsWithStatement
       parameters:
-        - $ref: "#/components/parameters/text"
+        - $ref: '#/components/parameters/text'
       responses:
         '200':
           description: OK
@@ -194,7 +194,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/persons"
+                  - $ref: '#/components/schemas/persons'
 
   /persons/near/{longitude},{latitude}/radius/{radius}:
     get:
@@ -204,9 +204,9 @@ paths:
       summary: Get persons near location
       operationId: fetchPersonsNearLocation
       parameters:
-        - $ref: "#/components/parameters/longitude"
-        - $ref: "#/components/parameters/latitude"
-        - $ref: "#/components/parameters/radius"
+        - $ref: '#/components/parameters/longitude'
+        - $ref: '#/components/parameters/latitude'
+        - $ref: '#/components/parameters/radius'
       responses:
         '200':
           description: OK
@@ -214,19 +214,19 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/persons"
+                  - $ref: '#/components/schemas/persons'
 
   /person/{id}/location/{longitude},{latitude}:
     patch:
-      tags: 
+      tags:
         - Location
       description: Updates the person's location
       summary: Update person's location
       operationId: updatePersonLocation
       parameters:
-        - $ref: "#/components/parameters/id"
-        - $ref: "#/components/parameters/longitude"
-        - $ref: "#/components/parameters/latitude"
+        - $ref: '#/components/parameters/id'
+        - $ref: '#/components/parameters/longitude'
+        - $ref: '#/components/parameters/latitude'
       responses:
         '200':
           description: OK
@@ -234,8 +234,8 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: "#/components/schemas/person_id"
-                  - $ref: "#/components/schemas/person_location"
+                  - $ref: '#/components/schemas/person_id'
+                  - $ref: '#/components/schemas/person_location'
 
 components:
   parameters:
@@ -245,118 +245,118 @@ components:
       required: true
       description: The ID of the person to interact with
       schema:
-        $ref: "#/components/schemas/id"
+        $ref: '#/components/schemas/id'
     last_name:
       name: last_name
       in: path
       required: true
       description: The last name of the person
       schema:
-        $ref: "#/components/schemas/last_name"
+        $ref: '#/components/schemas/last_name'
     longitude:
       name: longitude
       in: path
       required: true
       description: The longitude status of the person
       schema:
-        $ref: "#/components/schemas/coordinate"
+        $ref: '#/components/schemas/coordinate'
     latitude:
       name: latitude
       in: path
       required: true
       description: The latitude status of the person
       schema:
-        $ref: "#/components/schemas/coordinate"
+        $ref: '#/components/schemas/coordinate'
     radius:
       name: radius
       in: path
       required: true
       description: A radius for a location search in miles
       schema:
-        $ref: "#/components/schemas/radius"
+        $ref: '#/components/schemas/radius'
     text:
       name: text
       in: path
       required: true
       description: Text to search for
       schema:
-        $ref: "#/components/schemas/text"
+        $ref: '#/components/schemas/text'
 
   schemas:
     person_id:
       type: object
       properties:
         entityId:
-          $ref: "#/components/schemas/id"
+          $ref: '#/components/schemas/id'
 
     persons:
       type: array
       items:
-        $ref: "#/components/schemas/person"
+        $ref: '#/components/schemas/person'
 
     person:
       allOf:
-        - $ref: "#/components/schemas/person_full_name"
-        - $ref: "#/components/schemas/person_age"
-        - $ref: "#/components/schemas/person_verified"
-        - $ref: "#/components/schemas/person_location"
-        - $ref: "#/components/schemas/person_skills"
-        - $ref: "#/components/schemas/person_statement"
+        - $ref: '#/components/schemas/person_full_name'
+        - $ref: '#/components/schemas/person_age'
+        - $ref: '#/components/schemas/person_verified'
+        - $ref: '#/components/schemas/person_location'
+        - $ref: '#/components/schemas/person_skills'
+        - $ref: '#/components/schemas/person_statement'
 
     person_full_name:
       allOf:
-        - $ref: "#/components/schemas/person_first_name"
-        - $ref: "#/components/schemas/person_last_name"
+        - $ref: '#/components/schemas/person_first_name'
+        - $ref: '#/components/schemas/person_last_name'
 
     person_first_name:
       type: object
       properties:
         firstName:
-          $ref: "#/components/schemas/first_name"
+          $ref: '#/components/schemas/first_name'
 
     person_last_name:
       type: object
       properties:
         lastName:
-          $ref: "#/components/schemas/last_name"
+          $ref: '#/components/schemas/last_name'
 
     person_age:
       type: object
       properties:
         age:
-          $ref: "#/components/schemas/age"
+          $ref: '#/components/schemas/age'
 
     person_verified:
       type: object
       properties:
         verified:
-          $ref: "#/components/schemas/verified"
+          $ref: '#/components/schemas/verified'
 
     person_location:
       allOf:
         - type: object
           properties:
             location:
-              $ref: "#/components/schemas/location"
-        - $ref: "#/components/schemas/person_location_updated"
+              $ref: '#/components/schemas/location'
+        - $ref: '#/components/schemas/person_location_updated'
 
     person_location_updated:
       type: object
       properties:
         locationUpdated:
-          $ref: "#/components/schemas/location_updated"
+          $ref: '#/components/schemas/location_updated'
 
     person_skills:
       type: object
       properties:
         skills:
-          $ref: "#/components/schemas/skills"
+          $ref: '#/components/schemas/skills'
 
     person_statement:
       type: object
       properties:
         personalStatement:
-          $ref: "#/components/schemas/statement"
+          $ref: '#/components/schemas/statement'
 
     id:
       description: The ID of the person
@@ -386,7 +386,7 @@ components:
 
     location:
       description: The location of the person on the globe
-      $ref: "#/components/schemas/geo"
+      $ref: '#/components/schemas/geo'
 
     location_updated:
       description: >
@@ -425,11 +425,11 @@ components:
       properties:
         longitude:
           description: The longitudinal position on the globe
-          $ref: "#/components/schemas/coordinate"
+          $ref: '#/components/schemas/coordinate'
           example: -2.518
         latitude:
           description: The latitudinal position on the globe
-          $ref: "#/components/schemas/coordinate"
+          $ref: '#/components/schemas/coordinate'
           example: 53.259
 
     coordinate:
