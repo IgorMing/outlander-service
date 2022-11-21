@@ -4,6 +4,7 @@
   "description": "Started code for Redis OM + Express workshop.",
   "type": "module",
   "scripts": {
+    "lint": "eslint ./src",
     "start": "nodemon --experimental-modules --es-module-specifier-resolution=node server.js"
   },
   "author": "Guy Royse <guy@guyroyse.com> (http://guyroyse.com/)",

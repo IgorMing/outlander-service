@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { personRepository } from '../om/person';
 
-export const router = Router();
+const router = Router();
 
 router.get('/:id', async (req, res) => {
   const person = await personRepository.fetch(req.params.id);
@@ -33,6 +33,8 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   const { id } = req.params;
-  personRepository.remove(id);
+  await personRepository.remove(id);
   res.send({ id });
 });
+
+export default router;
