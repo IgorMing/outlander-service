@@ -24,7 +24,7 @@ router.put('/:id', async (req, res) => {
   person.location = body.location ?? null;
   person.locationUpdated = body.locationUpdated ?? null;
   person.skills = body.skills ?? null;
-  person.personalStatement = body.personalStatement ?? null;
+  person.description = body.description ?? null;
 
   await personRepository.save(person);
 

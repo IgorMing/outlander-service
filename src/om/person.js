@@ -12,8 +12,8 @@ const personSchema = new Schema(
     verified: { type: 'boolean' },
     location: { type: 'point' },
     locationUpdated: { type: 'date' },
-    skills: { type: 'string[]' },
-    personalStatement: { type: 'text' },
+    interests: { type: 'string[]' },
+    description: { type: 'text' },
   },
   {
     dataStructure: 'JSON',

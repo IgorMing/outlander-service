@@ -5,13 +5,9 @@
   "verified": false,
   "location": {
     "longitude": -118.25,
-    "latitude": 34.050
+    "latitude": 34.05
   },
-  "locationUpdated" : "2022-01-01T12:00:00.000Z",
-  "skills": [
-    "singing",
-    "keyboard",
-    "blessing"
-  ],
-  "personalStatement": "I seek to cure what's deep inside frightened of this thing that I've become"
+  "locationUpdated": "2022-01-01T12:00:00.000Z",
+  "skills": ["singing", "keyboard", "blessing"],
+  "description": "I seek to cure what's deep inside frightened of this thing that I've become"
 }

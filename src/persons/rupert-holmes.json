@@ -7,11 +7,7 @@
     "longitude": -2.518,
     "latitude": 53.259
   },
-  "locationUpdated" : "2022-01-01T12:00:00.000Z",
-  "skills": [
-    "singing",
-    "songwriting",
-    "playwriting"
-  ],
-  "personalStatement": "I like piña coladas and taking walks in the rain."
+  "locationUpdated": "2022-01-01T12:00:00.000Z",
+  "skills": ["singing", "songwriting", "playwriting"],
+  "description": "I like piña coladas and taking walks in the rain."
 }
