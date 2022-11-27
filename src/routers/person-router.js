@@ -17,13 +17,11 @@ router.put('/:id', async (req, res) => {
   const { body, params } = req;
   const person = await personRepository.fetch(params.id);
 
-  person.firstName = body.firstName ?? null;
-  person.lastName = body.lastName ?? null;
-  person.age = body.age ?? null;
-  person.verified = body.verified ?? null;
+  person.name = body.name ?? null;
+  person.publicName = body.publicName ?? null;
+  person.birthDate = body.birthDate ?? null;
+  person.interests = body.interests ?? null;
   person.location = body.location ?? null;
-  person.locationUpdated = body.locationUpdated ?? null;
-  person.skills = body.skills ?? null;
   person.description = body.description ?? null;
 
   await personRepository.save(person);

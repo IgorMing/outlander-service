@@ -6,13 +6,11 @@ class Person extends Entity {}
 const personSchema = new Schema(
   Person,
   {
-    firstName: { type: 'string' },
-    lastName: { type: 'string' },
-    age: { type: 'number' },
-    verified: { type: 'boolean' },
-    location: { type: 'point' },
-    locationUpdated: { type: 'date' },
+    name: { type: 'string' },
+    publicName: { type: 'string' },
+    birthDate: { type: 'date' },
     interests: { type: 'string[]' },
+    location: { type: 'point' },
     description: { type: 'text' },
   },
   {
