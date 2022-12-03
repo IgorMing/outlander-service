@@ -18,14 +18,14 @@ router.get('/about/:text', async (req, res) => {
   res.send(person);
 });
 
-router.get('/by-last-name/:lastName', async (req, res) => {
-  const lastName = req.params.lastName;
-  const persons = await personRepository
-    .search()
-    .where('lastName')
-    .equals(lastName)
-    .return.all();
-  res.send(persons);
-});
+// router.get('/by-last-name/:lastName', async (req, res) => {
+//   const lastName = req.params.lastName;
+//   const persons = await personRepository
+//     .search()
+//     .where('lastName')
+//     .equals(lastName)
+//     .return.all();
+//   res.send(persons);
+// });
 
 export default router;

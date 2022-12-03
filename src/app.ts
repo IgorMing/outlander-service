@@ -3,11 +3,11 @@ import 'dotenv/config';
 import express from 'express';
 // import swaggerUi from 'swagger-ui-express';
 // import YAML from 'yamljs';
-import peopleRouter from './src/routers/people-router';
-import searchRouter from './src/routers/search-router';
+import peopleRouter from './routers/people-router';
+import searchRouter from './routers/search-router';
 
 /* create an express app and use JSON */
-const app = new express();
+const app = express();
 app.use(express.json());
 
 app.use('/people', peopleRouter);
@@ -17,5 +17,4 @@ app.use('/search', searchRouter);
 // const swaggerDocument = YAML.load('api.yaml');
 // app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-/* start the server */
-app.listen(8080);
+export default app;
