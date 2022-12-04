@@ -1,17 +1,7 @@
 import { Entity, Schema } from 'redis-om';
 import client from './client';
 
-class Person extends Entity {
-  name: string;
-  publicName?: string;
-  birthDate: Date;
-  interests: string[];
-  location: {
-    longitude: number;
-    latitude: number;
-  };
-  description?: string;
-}
+class Person extends Entity {}
 
 const personSchema = new Schema(
   Person,
